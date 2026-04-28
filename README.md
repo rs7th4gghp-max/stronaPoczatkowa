@@ -1,0 +1,2 @@
+# stronaPoczatkowa
+super strona glowna

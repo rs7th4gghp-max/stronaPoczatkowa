@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Strona Glowna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+ <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.addEventListener("mousemove", function(e) {
+    const spark = document.createElement("div");
+    spark.classList.add("fire-spark");
+    document.body.appendChild(spark);
+
+    spark.style.left = e.pageX + "px";
+    spark.style.top = e.pageY + "px";
+
+    // Losowa wielkość
+    const size = Math.random() * 10 + 5;
+    spark.style.width = size + "px";
+    spark.style.height = size + "px";
+
+    // Losowy rozrzut iskier
+    const angle = Math.random() * 360;
+    const dist = Math.random() * 40;
+    spark.style.transform = `translate(${Math.sin(angle)*dist}px, ${Math.cos(angle)*dist}px)`;
+
+    // Usuwanie po animacji
+    setTimeout(() => {
+        spark.remove();
+    }, 700);
+});
+</script>
+
+<body>
+    <nav>
+        <h1 id="powitanieH1">Witaj na superStronieGlownej Mikołaja!</h1><br>
+         <a id="linkNav" href="https://www.youtube.com/watch?v=vRrvRtnlqvM"><button>fajne coś</button></a>
+         <a id="linkNavp"  href="http://192.168.1.25:8000/linki.html"><button>!więcej linków!</button></a>
+         
+        
+    </nav> <br>
+ <center>   
+    <div class="wazneInfo">
+        <h2><u>Ważne!</u></h2><h2 id="wynik"><b></b></h2>
+        <input id="tekst" type="text" placeholder="Wpisz coś ważnego..." />
+        <button onclick="pokaz()">Pokaż</button>
+    </div> <br>
+
+
+<div class="google">
+    <img src="obrazek_gradient_ale_nie.png" id="obrazek_gradient_ale_nie">
+<h1 id="Niebieski">G</h1><h1 id="Czerwony">ó</h1><h1 id="Zolty">g</h1><h1 id="Zielony">l</h1>
+    <br>
+    <form action="https://www.google.com/search" method="GET">
+  <input id="wyszukaj" type="text" name="q" placeholder="Szukaj w Google ILE TO 2+2">
+  <input type="submit" value="guglaj🔎" id="przyciskGoogle">
+</form>
+<br>
+</div><br>
+</center>
+    <center>
+   <div class="reklama">
+    <h2 id="H2linki">Reklamy:</h2>
+    <img  id="Gunwo" src="Gunwo.png" alt="reklama">
+    <img  id="Gunwo" src="SuperAgatka.png" alt="reklama">
+   </div>
+    </center>
+ 
+
+
+<script>
+// Ładowanie zapisanego tekstu po wejściu na stronę
+window.onload = function() {
+    const zapisane = localStorage.getItem("mojTekst");
+    if (zapisane) {
+        document.getElementById("wynik").innerText = zapisane;
+    }
+};
+
+function pokaz() {
+    const wpisane = document.getElementById("tekst").value;
+    document.getElementById("wynik").innerText = wpisane;
+
+    // Zapis do pamięci przeglądarki
+    localStorage.setItem("mojTekst", wpisane);
+}
+</script>
+
+
+</body>
+</html>

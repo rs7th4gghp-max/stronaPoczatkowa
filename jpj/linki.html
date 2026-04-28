@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.addEventListener("mousemove", function(e) {
+    const spark = document.createElement("div");
+    spark.classList.add("fire-spark");
+    document.body.appendChild(spark);
+
+    spark.style.left = e.pageX + "px";
+    spark.style.top = e.pageY + "px";
+
+    // Losowa wielkość
+    const size = Math.random() * 10 + 5;
+    spark.style.width = size + "px";
+    spark.style.height = size + "px";
+
+    // Losowy rozrzut iskier
+    const angle = Math.random() * 360;
+    const dist = Math.random() * 40;
+    spark.style.transform = `translate(${Math.sin(angle)*dist}px, ${Math.cos(angle)*dist}px)`;
+
+    // Usuwanie po animacji
+    setTimeout(() => {
+        spark.remove();
+    }, 700);
+});
+</script>
+
+<body>
+    
+    <nav>
+        <h1 id="powitanieH1">Witaj na superStronieGlownej Mikołaja!</h1><br>
+        <a id="linkNav" href="https://www.google.com/"><button>gugl</button></a>
+          <a id="linkNav" href="http://192.168.1.25:8000/index.html"><button>Powrót</button></a>
+         
+        
+    </nav>
+    <br>
+
+    <br>
+    <div class="Linki">
+
+        <h2 id="H2linki">Linki:</h2>
+   <ul>
+    <li>
+        <a id="Alinki" href="https://www.youtube.com/"><button><b>jutub </b><br><img src="yt.png" alt="nic" height="45px"></button></a>
+        
+    </li>
+    <li>
+        <a id="Alinki" href="https://www.tinkercad.com/"><button><b>TiNkErCAd</b><br><img src="pobrane.png" alt="nic" height="45px"></button></a>
+        
+    </li>
+    <li>
+        <a id="Alinki" href="https://neon.nowaera.pl/ne/dashboard"><button><b>ksiażki NE</b> <br><img src="ksiażki.png" height="45px" alt="nic"></button></a>
+    </li>
+    <li>
+        <a id="Alinki" href="https://www.canva.com"><button><b>canva </b><br><img src="canva.png" alt="nic" height="45px"></button></a>
+    </li>
+    <li>
+        <a id="Alinki" href="https://synergia.librus.pl"><button><b>librus</b> <br><img src="synergia-logo.png" alt="" height="45px"></button></a>
+    </li>
+    <li>
+        <a id="Alinki" href="https://moje.gwo.pl/accesses"><button><b>gwo </b><br><img src="gjeWuO.png" alt="" height="45px"></button></a>
+    </li>
+    <li>
+        <a id="Alinki" href="https://gemini.google.com/app?utm_source=app_launcher&utm_medium=owned&utm_campaign=base_all"><button><b>✨DŻEMINAJ✨</b> <br><img src="dżeminaj.png" alt="logo gemini" height="45px" ></button></a>
+    </li>
+    <li><h3>koniec bo wiecej ni ma</h3></li>
+   </ul>
+    </div>
+    <a  href="file:///C:/Users/mikis/jpj/index.html"><button>Powrót</button></a>
+</body>
+</html>
